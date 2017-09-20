@@ -1,5 +1,3 @@
-package fractionProject;
-
 public class Fraction {
 	private int num;
 	private int den;
@@ -25,10 +23,35 @@ public class Fraction {
 		return (num + "/" + den);
 
 	}
-	public int add(Fraction other) {
+	public Fraction add(Fraction other) {
 		int x = (num*other.den) + (other.num*den);
 		int y = (den * other.den);
-		return x;
+		Fraction newFraction = new Fraction(x, y);
+		return newFraction;
+	
+	}
+	
+	public Fraction subtract(Fraction other) {
+		int x = (num*other.den) - (other.num*den);
+		int y = (den * other.den);
+		Fraction newFraction = new Fraction(x, y);
+		return newFraction;
+	
+	}
+	
+	public Fraction multiply(Fraction other) {
+		int x = (num*other.num);
+		int y = (den * other.den);
+		Fraction newFraction = new Fraction(x, y);
+		return newFraction;
+	
+	}
+	
+	public Fraction divide(Fraction other) {
+		int x = (num*other.den);
+		int y = (den * other.num);
+		Fraction newFraction = new Fraction(x, y);
+		return newFraction;
 	
 	}
 }
