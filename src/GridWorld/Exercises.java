@@ -30,7 +30,7 @@ public class Exercises {
 		private Object world;
 
 		public void CircleBug() {
-		world.add(new SpiralBug());
+		
 		}
 	}
 }
