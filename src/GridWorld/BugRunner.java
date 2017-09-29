@@ -34,7 +34,7 @@ public class BugRunner
 {
     public static void main(String[] args)
     {
-    	Grid<Actor> grid = new BoundedGrid<Actor>(20, 40);
+    	Grid<Actor> grid = new BoundedGrid<Actor>(10, 10);
         ActorWorld world = new ActorWorld (grid);
     	
         world.add(new Bug());
