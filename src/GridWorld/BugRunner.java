@@ -34,17 +34,29 @@ public class BugRunner
 {
     public static void main(String[] args)
     {
-    	Grid<Actor> grid = new BoundedGrid<Actor>(10, 10);
+    	Grid<Actor> grid = new BoundedGrid<Actor>(40, 40);
         ActorWorld world = new ActorWorld (grid);
     	
-        world.add(new Bug());
+//        world.add(new Bug());
         world.add(new Rock());
         world.add(new Actor());
         world.show();
         
-        MyActor x = new MyActor();
-        world.add(x);
-        world.add(new LeftyBug());
+//        MyActor x = new MyActor();
+//        world.add(x);
+//        world.add(new LeftyBug());
+        
+//        MyActor y = new MyActor();
+//        world.add(y);
+//        world.add(new CircleBug(4));
+//        
+        MyActor z = new MyActor();
+        world.add(z);
+        world.add(new SpiralBug());
+//        
+//        MyActor a = new MyActor();
+//        world.add(a);
+//        world.add(new ZBug(4));
     }
     
 
