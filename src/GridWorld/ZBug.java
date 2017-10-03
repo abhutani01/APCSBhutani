@@ -2,54 +2,35 @@ package GridWorld;
 
 import info.gridworld.actor.Bug;
 import info.gridworld.grid.Location;
+import info.gridworld.actor.Bug;
+import info.gridworld.grid.Location;
 
 public class ZBug extends Bug {
-	private int sideLength;
 	private int steps;
+	private int xLength;
+	private int x;
 
 	public ZBug(int length) {
-		sideLength = length;
+		setDirection(Location.EAST);
 		steps = 0;
-		setDirection (Location.EAST);
+		x = 1;
+		xLength = length;
 	}
 
-	{
-
-		if (steps <= sideLength) {
+	public void act() {
+		if (x < 4 && steps < xLength) {
 			if (canMove()) {
 				move();
 				steps++;
 			}
-		}
-
-		else if (steps == sideLength) {
+		} else if (x == 1) {
 			setDirection(Location.SOUTHWEST);
-			if (canMove()) {
-				move();
-				steps++;
-			}
-		}
-
-		else if (steps < sideLength * 2) {
-			if (canMove()) {
-				move();
-				steps++;
-			}
-		} 
-		
-		else if (steps == sideLength * 2) {
+			steps = 0;
+			x++;
+		} else if (x == 2) {
 			setDirection(Location.EAST);
-			if (canMove()) {
-				move();
-				steps++;
-			}
-		}
-
-		else if (steps < sideLength * 3) {
-			if (canMove()) {
-				move();
-				steps++;
-			}
+			steps = 0;
+			x++;
 		}
 	}
 }
