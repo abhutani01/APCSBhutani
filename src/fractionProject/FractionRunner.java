@@ -1,4 +1,5 @@
 package fractionProject;
+import java.util.Scanner;
 
 import java.util.Scanner;
 
@@ -10,8 +11,12 @@ public class FractionRunner {
 		Method2();
 	}
 
+<<<<<<< HEAD
 	public static void Method2() {
 		System.out.println();
+=======
+	public static void Method1() {
+>>>>>>> branch 'master' of https://github.com/abhutani01/APCSBhutani.git
 		Fraction f1 = new Fraction(1, 2); // represents one-half
 		System.out.print("One Half = ");
 		System.out.println(f1); // should output 1 / 2
@@ -54,6 +59,7 @@ public class FractionRunner {
 
 	}
 
+<<<<<<< HEAD
 	public static void Method1() {
 
 		System.out.println("Enter numerator for fraction 1");
@@ -106,3 +112,58 @@ public class FractionRunner {
 		}
 	}
 }
+=======
+	public static void Method2() {
+		System.out.println();
+		System.out.println("Enter numerator for fraction 1");
+		Scanner reader = new Scanner(System.in);
+		int val1 = reader.nextInt();
+		System.out.println("Enter denominator for fraction 1");
+		Scanner reader1 = new Scanner(System.in);
+		int val2 = reader1.nextInt();
+		Fraction f4 = new Fraction(val1, val2);
+		f4.setNumerator(val1);
+		f4.setDenominator(val2);
+
+		System.out.println("Enter an operation (add, sub, mult, div)");
+		Scanner reader6 = new Scanner(System.in);
+		String c = reader6.next();
+		System.out.println("Enter numerator for fraction 2");
+		Scanner reader4 = new Scanner(System.in);
+		int val4 = reader4.nextInt();
+		System.out.println("Enter denominator for fraction 2");
+		Scanner reader5 = new Scanner(System.in);
+		int val5 = reader5.nextInt();
+		Fraction f5 = new Fraction(val4, val5);
+		f5.setNumerator(val4);
+		f5.setDenominator(val5);
+
+		if (c.equals("add")) {
+			Fraction sum = f4.add(f5);
+			System.out.println("sum: " + sum);
+			System.exit(0);
+		}
+		if (c.equals("sub")) {
+			Fraction difference = f4.subtract(f5);
+			System.out.println("difference: " + difference);
+			System.exit(0);
+		}
+		if (c.equals("mult")) {
+			Fraction product = f4.multiply(f5);
+			System.out.println("product: " + product);
+			System.exit(0);
+		}
+		if (c.equals("div")) {
+			Fraction quotient = f4.divide(f5);
+			System.out.println("quotient: " + quotient);
+			System.exit(0);
+		}
+		while (c.equals("add") == false || c.equals("sub") == false || c.equals("mult") == false
+				|| c.equals("div") == false) {
+			Method2();
+			System.exit(0);
+		}
+	}
+
+}
+>>>>>>> branch 'master' of https://github.com/abhutani01/APCSBhutani.git
