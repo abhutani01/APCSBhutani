@@ -1,5 +1,7 @@
 package GridWorld;
 
+import java.awt.Color;
+
 import info.gridworld.actor.Bug;
 
 public class SpiralBug extends Bug {
@@ -9,6 +11,7 @@ public class SpiralBug extends Bug {
 	public SpiralBug() {
 		sideLength = 0;
 		steps = 0;
+		setColor(Color.CYAN);
 	}
 
 	public void act() {

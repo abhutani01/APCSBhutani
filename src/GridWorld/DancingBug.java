@@ -1,28 +1,31 @@
 package GridWorld;
 
+import java.awt.Color;
+
 import info.gridworld.actor.Bug;
 
 public class DancingBug extends Bug {
-	private int steps;
-	private int sideLength;
 
-	public DancingBug(int length) {
-		steps = 0;
-		sideLength = length;
+	private int step;
+	private int x;
+
+	public DancingBug() {
+		step = 0;
+		setColor(Color.ORANGE);
+	}
+
+	public void turn(int x) {
+		x = (int) (Math.random() * 2) - 2;
+		for (int i = 1; i <= x; i++) {
+			turn();
+		}
 	}
 
 	public void act() {
-		if (steps < sideLength && canMove()) {
-			move();
-			steps++;
-		} else {
-		int x = ((int)Math.random() * -2) + 2;
-		while (steps < x) {
-			turn();	
-		}
-	
-			steps = 0;
-			
-		}
+		if (step == x)
+			step = 0;
+		turn(x);
+		step++;
+		super.act();
 	}
 }

@@ -32,33 +32,22 @@ import info.gridworld.grid.Grid;
  */
 public class BugRunner {
 	public static void main(String[] args) {
-		Grid<Actor> grid = new BoundedGrid<Actor>(40, 40);
+		Grid<Actor> grid = new BoundedGrid<Actor>(20, 20);
 		ActorWorld world = new ActorWorld(grid);
 
 		world.add(new Bug());
 		world.add(new Rock());
 		world.add(new Actor());
 		world.show();
-
-		MyActor x = new MyActor();
-		world.add(x);
 		world.add(new LeftyBug());
-
-		MyActor y = new MyActor();
-		world.add(y);
 		world.add(new CircleBug(4));
-
-		MyActor z = new MyActor();
-		world.add(z);
 		world.add(new SpiralBug());
-
-		MyActor a = new MyActor();
-		world.add(a);
 		world.add(new ZBug(4));
+		world.add(new DancingBug());
+		world.add(new RightTriangleBug(4));
 		
-		MyActor b = new MyActor();
-		world.add(b);
-		world.add(new DancingBug(4));
+		
+
 	}
 
 }

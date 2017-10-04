@@ -1,5 +1,7 @@
 package GridWorld;
 
+import java.awt.Color;
+
 import info.gridworld.actor.Bug;
 import info.gridworld.grid.Location;
 import info.gridworld.actor.Bug;
@@ -15,6 +17,7 @@ public class ZBug extends Bug {
 		steps = 0;
 		x = 1;
 		xLength = length;
+		setColor(Color.PINK);
 	}
 
 	public void act() {
@@ -32,5 +35,6 @@ public class ZBug extends Bug {
 			steps = 0;
 			x++;
 		}
+
 	}
 }
