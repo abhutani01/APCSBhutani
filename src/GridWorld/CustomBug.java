@@ -4,8 +4,6 @@ import java.awt.Color;
 
 import info.gridworld.actor.Actor;
 import info.gridworld.actor.Bug;
-import info.gridworld.actor.Rock;
-import info.gridworld.actor.Flower;
 import info.gridworld.grid.Grid;
 import info.gridworld.grid.Location;
 
@@ -13,24 +11,35 @@ import info.gridworld.grid.Location;
 
 public class CustomBug extends Bug {
 	private int steps;
-	private int sideLength;
-	private int x;
- 
-	public CustomBug(int length) {
-		steps = 0;
-		sideLength = length;
-		x = 0;
-		setColor(Color.GREEN);
+	private int start;
+
+	public CustomBug(int x) {
+		start = x;
+	    setColor(Color.BLACK);
 	}
 
-	public void act()  {
-		if (steps < sideLength && canMove()) {
-			move();
+	public void act() {
+		if (steps < start && canMove()) {
+			move2();
 			steps++;
-		} 
-		else {
+		} else {
 			turn();
-		 Grid<Actor> gr = getGrid();
+			steps = 0;
+		}
+	}
+	
+	public String toString() {
+		return super.toString() + "Hi, I'm a \"Dinosaur\"!";
+	}
+
+	public CustomBug() {
+		super();
+	}
+ 
+
+	 public void move2()
+	    {
+	        Grid<Actor> gr = getGrid();
 	        if (gr == null)
 	            return;
 	        Location loc = getLocation();
@@ -39,14 +48,8 @@ public class CustomBug extends Bug {
 	            moveTo(next);
 	        else
 	            removeSelfFromGrid();
-	        Rock rock = new Rock(getColor());
-	        rock.putSelfInGrid(gr, loc);
 	        Bug bug = new Bug(getColor());
 	        bug.putSelfInGrid(gr, loc);
-	        
 	    }
-	
-			steps = 0;
-			
-		}
+
 	}
