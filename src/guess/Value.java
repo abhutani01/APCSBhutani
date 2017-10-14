@@ -56,7 +56,7 @@ public class Value {
 	 * sets the Value to a random number in a given range
 	 */
 	public Value() {
-		value = (int) (Math.random() * 100) + 1;
+		value = (int) (Math.random() * getMax()) + getMin();
 
 	}
 
