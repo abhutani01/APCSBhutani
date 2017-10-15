@@ -1,3 +1,5 @@
+//Note: This code does not work yet - I don't know why because it looks right - but I am working on it.
+
 package guess;
 
 import java.util.Scanner;
