@@ -37,7 +37,7 @@ public class GuessRunner {
 			}
 
 			if ((guess.getVal() < min) || (guess.getVal() > max)) {
-				System.out.println("Invalid - enter an integer between " + min + " and " + max);
+				System.out.println("Out of Range - enter an integer between " + min + " and " + max);
 			}
 
 			else {
