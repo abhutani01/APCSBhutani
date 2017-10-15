@@ -74,11 +74,11 @@ public class Value {
 		}
 	}
 	
-/**
- * Checks if other value and value are equal, if other value is less than, or if other value is greater than
- * @param o
- * @return
- */
+	/**
+ 	* Checks if other value and value are equal, if other value is less than, or if other value is greater than
+ 	* @param o
+ 	* @return
+ 	*/
 	public int compareTo(Value o) {
 		if (value == o.value) {
 			return 0;
