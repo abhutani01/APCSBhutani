@@ -41,11 +41,11 @@ public class GuessRunner {
 			}
 
 			else {
-				if (val.compareTo(guess) > 0) {
+				if (val.compareTo(guess) < 0) {
 					System.out.println("Too Low");
 				}
 
-				if (val.compareTo(guess) < 0) {
+				if (val.compareTo(guess) > 0) {
 					System.out.println("Too High");
 				}
 			}
