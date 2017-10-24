@@ -6,7 +6,10 @@ public class GuessRunner {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
+		Method1();
+		Method2();
+	}
+public static void Method1() {
 		Scanner rdr = new Scanner(System.in);
 
 		System.out.println("Enter a minimum (for range): ");
@@ -51,7 +54,21 @@ public class GuessRunner {
 			}
 		}
 
+
 		while (!val.equals(guess));
 		System.out.println("Congratulations! You guessed the correct number after " + count + " tries.");
+		
+	}
+	public static void Method2() {
+		Scanner rdr = new Scanner(System.in);
+		System.out.println("Would you like to play again? Type 1 for yes and 0 for no: ");
+		int x = rdr.nextInt();
+		if (x == 1) {
+			Method1();
+		}
+		else if (x == 0) {
+			System.out.println("Okay, thanks for playing.");
+		}
 	}
 }
+
