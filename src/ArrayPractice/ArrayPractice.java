@@ -29,6 +29,7 @@ public class ArrayPractice {
 
 	public static String concat(String[] arr) {
 		String x = null;
+		
 		for (int i = 0; i < arr.length; i++) {
 			x = (arr[i] + " ");
 		}
