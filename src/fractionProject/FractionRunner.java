@@ -1,3 +1,5 @@
+package fractionProject;
+
 import java.util.Scanner;
 
 public class FractionRunner {
