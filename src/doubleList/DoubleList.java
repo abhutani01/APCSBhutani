@@ -11,6 +11,58 @@ public class DoubleList {
 		myList = new double[20];
 		mySize = 0;
 	}
+	
+	/**
+	 * accepts an integer, x,  and uses that value 
+	 * to set its initial maximum capacity
+	 * @param x
+	 */
+	public DoubleList(int x) {
+		myList = new double[x];
+		mySize = 0;
+	}
+	
+	public DoubleList(double[] x) {
+		x = new double [3];
+		myList = x;
+		mySize = 0;
+	}
+	
+	public int remove() {
+		if (myList.length == 0)
+			throw new IndexOutOfBoundsException("No items in list.");
+		else
+		myList[mySize]= mySize;
+		return mySize--;	
+	}
+	
+	public int indexOf(double x) {
+		for(int i = 0; i < mySize; i++) {
+			if (myList[i] == x)
+				return i;
+			}
+				return -1;
+		
+	}
+	
+	public int sum() {
+		int x = 0;
+		for (int i = 0; i < mySize; i++)
+			myList[i] += x;
+		
+		return x;
+	}
+
+	public int mean() {
+		int x = 0;
+		for (int i = 0; i < mySize; i++) {
+			myList[i] += x;
+		}
+		if (myList.length == 0)
+			throw new IndexOutOfBoundsException("No items in list.");
+		else
+			return x/myList.length;
+	}
 
 	/**
 	 * returns value of mySize
@@ -39,21 +91,22 @@ public class DoubleList {
 	 * @throws RuntimeException if list is full
 	*/
 	public void add(double x) {
-		if (maxSize() > mySize) {
+		if (this.maxSize() < this.mySize) {
+			throw new IndexOutOfBoundsException("The DoubleList is full.");
+		} 
+		else {
 			myList[mySize] = x;
 			mySize++;
-		} else {
-			throw new IndexOutOfBoundsException("The DoubleList is full.");
 		}
 	}
 	
 	public String toString() {
+		String x = "";
 		for (int i = 0; i < mySize; i++) {
-			return ("[" + i + "]" + " => " + myList);
+			x = ("[" + i + "]" + " => " + myList[i] + "; ");
 		}
-		return "";
+		return x;
 	}
-	
 	
 	
 }
