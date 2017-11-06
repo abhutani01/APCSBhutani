@@ -1,5 +1,7 @@
 package doubleList;
 
+import java.util.Arrays;
+
 public class DoubleList {
 	double[] myList;
 	int mySize;
@@ -45,6 +47,34 @@ public class DoubleList {
 		else
 			mySize--;
 		return myList[mySize];
+	}
+
+	/**
+	 * Subtracts an item of a specific index of the DoubleList
+	 * 
+	 * @param item
+	 *            the value to be subtracted Precondition: list is not out of bounds
+	 *            Postcondition: item is subtracted from the index specified of the
+	 *            list
+	 */
+	public void remove(int index) {
+		if (maxSize() < index)
+			throw new IndexOutOfBoundsException("Requested index is out of bounds.");
+
+		else {
+			double[] arr = new double[myList.length - 1];
+			for (int i = 0; i < myList.length; i++) {
+				if (i < index) {
+					arr[i] = myList[i];
+				} else if (i == index) {
+					arr[i] = arr[i - index];
+				} else {
+					arr[i - 1] = myList[i];
+				}
+			}
+			myList = arr;
+		}
+
 	}
 
 	/**
@@ -155,6 +185,12 @@ public class DoubleList {
 			return myList[x];
 	}
 
+	/**
+	 * sets the index to a value
+	 * 
+	 * @param x
+	 * @return
+	 */
 	public double set(int x, double y) {
 		if (maxSize() < x)
 			throw new IndexOutOfBoundsException("Requested index is out of bounds.");
@@ -207,6 +243,41 @@ public class DoubleList {
 			}
 			myList = arr;
 		}
+	}
+
+	/**
+	 * clears myList
+	 */
+	public void clear() {
+		for (int i = 0; i < mySize; i++) {
+			Arrays.fill(null, myList[i]);
+		}
+
+	}
+
+	/**
+	 * returns true only if the passed DoubleList contains identical item to "this"
+	 * DoubleList
+	 * 
+	 * @param o
+	 * @return
+	 */
+	public boolean equals(DoubleList o) {
+		if (myList.length == o.myList.length) {
+			for (int i = 0; i < myList.length; i++) {
+				if (myList[i] != o.myList[i]) {
+					return false;
+				}
+			}
+		}
+		return true;
+	}
+
+	public boolean isEmpty() {
+		if (myList.length == 0)
+			return true;
+		else
+			return false;
 	}
 
 	public String toString() {

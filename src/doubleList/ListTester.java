@@ -6,6 +6,7 @@ public class ListTester {
 	//Second add method problem at one index.
 	//Need more extensive Java Docs
 	//Add exceptions to a lot of part 4
+	//Clear method?
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -90,6 +91,40 @@ public class ListTester {
 		aList.add(4, 12.0);
 		System.out.println("List is: " + aList);
 		System.out.println();
+		
+		System.out.println("Testing Second Remove Method");
+		System.out.println("List is: " + aList);
+		aList.remove(4);
+		System.out.println("List is: " + aList);
+		System.out.println();
+		
+		System.out.println("Testing Clear Method");
+		System.out.println("List is: " + aList);
+		aList.clear();
+		System.out.println("List is: " + aList);
+		System.out.println();
+		
+		System.out.println("Testing Equals Method");
+		DoubleList aList3 = new DoubleList();
+		DoubleList aList4 = new DoubleList();
+		aList3.add(2);
+		aList3.add(3);
+		aList4.add(2);
+		aList4.add(3);
+		System.out.println("Array " + aList3 + "and array " + aList4 + "= " + aList3.equals(aList4));
+		aList4.remove();
+		aList4.add(4);
+		System.out.println("Array " + aList3 + "and array " + aList4 + "= " + aList3.equals(aList4));
+		aList4.add(4);
+		System.out.println("Array " + aList3 + "and array " + aList4 + "= " + aList3.equals(aList4));
+		System.out.println();
+		
+		System.out.println("Testing isEmpty Method");
+		DoubleList aList5 = new DoubleList();
+		System.out.println("List "+ aList4 + "is empty: " + aList4.isEmpty());
+		System.out.println("List "+ aList + "is empty: " + aList.isEmpty());
+		System.out.println();
+		
 		
 		
 	}
