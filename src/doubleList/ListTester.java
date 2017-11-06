@@ -3,7 +3,6 @@ package doubleList;
 public class ListTester {
 	
 	//Null pointer exception for third constructor.
-	//Second add method problem at one index.
 	//Need more extensive Java Docs
 	//Add exceptions to a lot of part 4
 	//Clear method?
@@ -43,29 +42,41 @@ public class ListTester {
 		System.out.println();
 
 		System.out.println("Testing Remove Method");
+		System.out.println("List is: " + aList);
 		System.out.println("Removed Value: " + aList.remove());
+		System.out.println("After Remove List is: " + aList);
 		System.out.println();
 
 		System.out.println("Testing indexOf Method");
+		System.out.println(aList);
 		System.out.println("Index Value of 0.0: " + aList.indexOf(0.0));
 		System.out.println("Index Value of 15.0: " + aList.indexOf(15.0));
 		System.out.println("Index Value of 30.0: " + aList.indexOf(30.0));
 		System.out.println();
 
+		
 		System.out.println("Testing Sum Method");
-		System.out.println("Sum of array: " + aList.sum());
+		DoubleList aList1 = new DoubleList();
+		aList1.add(3);
+		aList1.add(8);
+		aList1.add(4);
+		System.out.println(aList1);
+		System.out.println("Sum of array: " + aList1.sum());
 		System.out.println();
 
 		System.out.println("Testing Mean Method");
-		System.out.println("Mean of array: " + aList.mean());
+		System.out.println(aList1);
+		System.out.println("Mean of array: " + aList1.mean());
 		System.out.println();
 
 		System.out.println("Testing Maximum Method");
-		System.out.println("Maximum of array: " + aList.maximum());
+		System.out.println(aList1);
+		System.out.println("Maximum of array: " + aList1.maximum());
 		System.out.println();
 
 		System.out.println("Testing Minimum Method");
-		System.out.println("Minimum of array: " + aList.minimum());
+		System.out.println(aList1);
+		System.out.println("Minimum of array: " + aList1.minimum());
 		System.out.println();
 
 		System.out.println("Testing Get Method");
@@ -101,7 +112,7 @@ public class ListTester {
 		System.out.println("Testing Clear Method");
 		System.out.println("List is: " + aList);
 		aList.clear();
-		System.out.println("List is: " + aList);
+		System.out.println("Cleared List is: " + aList);
 		System.out.println();
 		
 		System.out.println("Testing Equals Method");
@@ -111,18 +122,18 @@ public class ListTester {
 		aList3.add(3);
 		aList4.add(2);
 		aList4.add(3);
-		System.out.println("Array " + aList3 + "and array " + aList4 + "= " + aList3.equals(aList4));
+		System.out.println("Array " + aList3 + "and array " + aList4 + "are equal = " + aList3.equals(aList4));
 		aList4.remove();
 		aList4.add(4);
-		System.out.println("Array " + aList3 + "and array " + aList4 + "= " + aList3.equals(aList4));
+		System.out.println("Array " + aList3 + "and array " + aList4 + "are equal = " + aList3.equals(aList4));
 		aList4.add(4);
-		System.out.println("Array " + aList3 + "and array " + aList4 + "= " + aList3.equals(aList4));
+		System.out.println("Array " + aList3 + "and array " + aList4 + "are equal = " + aList3.equals(aList4));
 		System.out.println();
 		
 		System.out.println("Testing isEmpty Method");
 		DoubleList aList5 = new DoubleList();
 		System.out.println("List "+ aList4 + "is empty: " + aList4.isEmpty());
-		System.out.println("List "+ aList + "is empty: " + aList.isEmpty());
+		System.out.println("List "+ aList + "[] " +  "is empty: " + aList.isEmpty());
 		System.out.println();
 		
 		

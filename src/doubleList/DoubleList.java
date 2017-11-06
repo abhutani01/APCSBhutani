@@ -131,7 +131,7 @@ public class DoubleList {
 	 */
 	public double maximum() {
 		double max = 0;
-		for (int i = 1; i < maxSize(); i++) {
+		for (int i = 0; i < maxSize(); i++) {
 			if (myList[i] > max) {
 				max = myList[i];
 			}
@@ -145,12 +145,12 @@ public class DoubleList {
 	 * @return
 	 */
 	public double minimum() {
-		double min = 0;
-		for (int i = 1; i < maxSize(); i++) {
-			if (myList[i] < min) {
+		double min = 0.0;
+		for (int i = 0; i < maxSize(); i++) {
+			if (myList[i] < min)
 				min = myList[i];
-			}
 		}
+	
 		return min;
 	}
 
@@ -239,6 +239,7 @@ public class DoubleList {
 					arr[i] = val;
 				} else {
 					arr[i + 1] = myList[i];
+					arr[index + 1] = myList[index];
 				}
 			}
 			myList = arr;
@@ -249,8 +250,7 @@ public class DoubleList {
 	 * clears myList
 	 */
 	public void clear() {
-		for (int i = 0; i < mySize; i++) 
-			Arrays.fill(myList, (Double) null);
+		mySize = 0;
 	}
 
 	/**
@@ -272,7 +272,7 @@ public class DoubleList {
 	}
 
 	public boolean isEmpty() {
-		if (myList.length == 0)
+		if (mySize == 0)
 			return true;
 		else
 			return false;
