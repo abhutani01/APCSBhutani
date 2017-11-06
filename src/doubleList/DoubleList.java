@@ -249,10 +249,8 @@ public class DoubleList {
 	 * clears myList
 	 */
 	public void clear() {
-		for (int i = 0; i < mySize; i++) {
-			Arrays.fill(null, myList[i]);
-		}
-
+		for (int i = 0; i < mySize; i++) 
+			Arrays.fill(myList, (Double) null);
 	}
 
 	/**
