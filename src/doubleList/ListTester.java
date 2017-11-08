@@ -2,7 +2,6 @@ package doubleList;
 
 public class ListTester {
 
-	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		DoubleList aList0 = new DoubleList(0);
@@ -59,7 +58,6 @@ public class ListTester {
 		System.out.println("Index Value of 30.0: " + aList.indexOf(30.0));
 		System.out.println();
 
-		
 		System.out.println("Testing Sum Method");
 		DoubleList aList1 = new DoubleList();
 		aList1.add(3);
@@ -68,7 +66,7 @@ public class ListTester {
 		System.out.println(aList1);
 		System.out.println("Sum of array: " + aList1.sum());
 		System.out.println();
-		
+
 		System.out.println("Testing Mean Method");
 		try {
 			aList0.maximum();
@@ -125,7 +123,7 @@ public class ListTester {
 		aList.add(4, 12.0);
 		System.out.println("List is: " + aList);
 		System.out.println();
-		
+
 		System.out.println("Testing Second Remove Method");
 		try {
 			aList.set(45, 5.0);
@@ -136,13 +134,13 @@ public class ListTester {
 		aList.remove(4);
 		System.out.println("List is: " + aList);
 		System.out.println();
-		
+
 		System.out.println("Testing Clear Method");
 		System.out.println("List is: " + aList);
 		aList.clear();
 		System.out.println("Cleared List is: " + aList);
 		System.out.println();
-		
+
 		System.out.println("Testing Equals Method");
 		DoubleList aList3 = new DoubleList();
 		DoubleList aList4 = new DoubleList();
@@ -157,26 +155,25 @@ public class ListTester {
 		aList4.add(4);
 		System.out.println("Array " + aList3 + "and array " + aList4 + "are equal = " + aList3.equals(aList4));
 		System.out.println();
-		
+
 		System.out.println("Testing isEmpty Method");
-		System.out.println("List "+ aList4 + "is empty: " + aList4.isEmpty());
-		System.out.println("List "+ aList + "[] " +  "is empty: " + aList.isEmpty());
+		System.out.println("List " + aList4 + "is empty: " + aList4.isEmpty());
+		System.out.println("List " + aList + "[] " + "is empty: " + aList.isEmpty());
 		System.out.println();
-		
+
 		System.out.println("Testing Contains Method");
 		System.out.println(aList1);
 		System.out.println("This array contains the double 4.0: " + aList1.contains(4.0));
 		System.out.println("This array contains the double 6.0: " + aList1.contains(6.0));
 		System.out.println();
-		
+
 		System.out.println("Testing Clone Method");
-		aList4.add(8	);
+		aList4.add(8);
 		aList4.add(6);
 		System.out.println(aList4);
 		System.out.println("Cloned Array: " + aList4.clone());
 		System.out.println();
-		
-		
+
 	}
 
 }
