@@ -1,14 +1,11 @@
 package doubleList;
 
 public class ListTester {
-	
-	//Null pointer exception for third constructor.
-	//Need more extensive Java Docs
-	//Add exceptions to a lot of part 4
-	//Clear method?
+
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		DoubleList aList0 = new DoubleList(0);
 		System.out.println("Testing Constructor");
 		DoubleList aList = new DoubleList();
 		System.out.println("size: " + aList.size());
@@ -38,10 +35,18 @@ public class ListTester {
 
 		System.out.println("Testing Third Constructor");
 		DoubleList List1 = new DoubleList(new double[3]);
+		List1.add(4);
+		List1.add(5);
+		List1.add(6);
 		System.out.println("List is: " + List1);
 		System.out.println();
 
 		System.out.println("Testing Remove Method");
+		try {
+			aList0.maximum();
+		} catch (Exception e) {
+			System.out.println("Remove When List is Empty: " + e);
+		}
 		System.out.println("List is: " + aList);
 		System.out.println("Removed Value: " + aList.remove());
 		System.out.println("After Remove List is: " + aList);
@@ -63,23 +68,39 @@ public class ListTester {
 		System.out.println(aList1);
 		System.out.println("Sum of array: " + aList1.sum());
 		System.out.println();
-
+		
 		System.out.println("Testing Mean Method");
+		try {
+			aList0.maximum();
+		} catch (Exception e) {
+			System.out.println("Mean of List When Empty: " + e);
+		}
 		System.out.println(aList1);
 		System.out.println("Mean of array: " + aList1.mean());
 		System.out.println();
 
 		System.out.println("Testing Maximum Method");
+		try {
+			aList0.maximum();
+		} catch (Exception e) {
+			System.out.println("Maximum of List When Empty: " + e);
+		}
 		System.out.println(aList1);
 		System.out.println("Maximum of array: " + aList1.maximum());
 		System.out.println();
 
 		System.out.println("Testing Minimum Method");
+		try {
+			aList0.maximum();
+		} catch (Exception e) {
+			System.out.println("Minimum of List When Empty: " + e);
+		}
 		System.out.println(aList1);
 		System.out.println("Minimum of array: " + aList1.minimum());
 		System.out.println();
 
 		System.out.println("Testing Get Method");
+		System.out.println(aList);
 		try {
 			aList.get(45);
 		} catch (Exception e) {
@@ -89,12 +110,14 @@ public class ListTester {
 		System.out.println();
 
 		System.out.println("Testing Set Method");
+		System.out.println(aList);
 		try {
 			aList.set(45, 5.0);
 		} catch (Exception e) {
 			System.out.println("Set value at index 45: " + e);
 		}
 		System.out.println("Set value at index 5: " + aList.set(5, 8.0));
+		System.out.println(aList);
 		System.out.println();
 
 		System.out.println("Testing Second Add Method");
@@ -104,6 +127,11 @@ public class ListTester {
 		System.out.println();
 		
 		System.out.println("Testing Second Remove Method");
+		try {
+			aList.set(45, 5.0);
+		} catch (Exception e) {
+			System.out.println("Remove value at index 45: " + e);
+		}
 		System.out.println("List is: " + aList);
 		aList.remove(4);
 		System.out.println("List is: " + aList);
@@ -131,11 +159,22 @@ public class ListTester {
 		System.out.println();
 		
 		System.out.println("Testing isEmpty Method");
-		DoubleList aList5 = new DoubleList();
 		System.out.println("List "+ aList4 + "is empty: " + aList4.isEmpty());
 		System.out.println("List "+ aList + "[] " +  "is empty: " + aList.isEmpty());
 		System.out.println();
 		
+		System.out.println("Testing Contains Method");
+		System.out.println(aList1);
+		System.out.println("This array contains the double 4.0: " + aList1.contains(4.0));
+		System.out.println("This array contains the double 6.0: " + aList1.contains(6.0));
+		System.out.println();
+		
+		System.out.println("Testing Clone Method");
+		aList4.add(8	);
+		aList4.add(6);
+		System.out.println(aList4);
+		System.out.println("Cloned Array: " + aList4.clone());
+		System.out.println();
 		
 		
 	}
