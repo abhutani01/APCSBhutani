@@ -26,12 +26,10 @@ public class Square {
 	}
 
 	public String toString() {
-		if (occupied)
-			return (Integer.toString(score) + " ");
+		if (occupied != false)
+			return " P ";
 		else
-			return "P";
+			return " " + score + " ";
+
 	}
-
 }
-
-
