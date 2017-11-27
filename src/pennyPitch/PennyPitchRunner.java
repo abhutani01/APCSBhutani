@@ -6,25 +6,55 @@ public class PennyPitchRunner {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Scanner rdr = new Scanner(System.in);
-		System.out.println("Welcome to the Penny Pitch game! Press enter to play.");
-		String str = rdr.nextLine();
-		int row = (int) ((Math.random() * 5) + 1);
-		int col = (int) ((Math.random() + 5) + 1);
-		int score = 0;
-
-		System.out.println("Throw Location: (" + row + ", " + col + ")");
-		System.out.println("Score: " + score);
-
 		Square[][] board = new Square[5][5];
-		for (int r = 0; r < board.length; r++) {
-			for (int c = 0; c < board.length; c++) {
 
+		board = new Square[][] { { new Square(1), new Square(1), new Square(1), new Square(1), new Square(1) },
+				{ new Square(1), new Square(2), new Square(2), new Square(2), new Square(1) },
+				{ new Square(1), new Square(2), new Square(3), new Square(2), new Square(1) },
+				{ new Square(1), new Square(2), new Square(2), new Square(2), new Square(1) },
+				{ new Square(1), new Square(1), new Square(1), new Square(1), new Square(1) }, };
+
+		int total = 0;
+		int turns = 0;
+		int count = 0;
+
+		Scanner rdr = new Scanner(System.in);
+		System.out.println("Welcome to Penny Pitch! Press enter to play.");
+
+		while (turns < 5) {
+			String s = rdr.nextLine();
+
+			int r = (int) (Math.random() * 4.0 + 0);
+			int c = (int) (Math.random() * 4.0 + 0);
+
+			if (board[r][c].getOccupied()) {
+				count = board[r][c].getScore() * 2;
+				total += count;
+				System.out.println("You threw: (" + r + ", " + c + ")");
+				System.out.println("Score (doubled): " + count);
+			} else {
+				total += board[r][c].getScore();
+				System.out.println("You threw: (" + r + ", " + c + ")");
+				System.out.println("Score: " + board[r][c].getScore());
+				board[r][c].setOccupied(true);
 			}
+
+			for (int i = 0; i < board.length; i++) {
+				for (int j = 0; j < board[i].length; j++) {
+					System.out.print(board[i][j]);
+				}
+				System.out.println();
+			}
+
+			turns++;
 		}
-		System.out.println("Total Score: " + score);
-		if (score > 9) {
-			System.out.println("Your score was greater than 9: You Win!");
+
+		System.out.println();
+		System.out.println("Total Score: " + total);
+		if (total > 9) {
+			System.out.println("You scored higher than 9: you're a winner!");
+
 		}
 	}
+
 }
